@@ -1,0 +1,73 @@
+\begin{center}
+    \captionof{figure}{Within- and Between-Person Effects of Continuous Predictor and Binary Outcome}
+
+\begin{tikzpicture}[scale=1.2]
+    \begin{axis}[
+        axis x line=left, axis y line=left,
+        xlabel={$X_{it}$}, ylabel={$P(Y_{it} = 1)$},
+        xmin=0, xmax=5, ymin=0, ymax=1,
+        % legend pos=south west,
+        samples=200,
+        domain=0:5,
+        ytick={0,0.2,0.4,0.6,0.8,1},
+        xtick={0,1,2,3,4,5},
+        clip=false,
+        enlargelimits=true
+    ]
+    
+    % Parameters
+    \pgfmathsetmacro{\gammaZero}{3}
+    \pgfmathsetmacro{\gammaOne}{-0.5}
+    \pgfmathsetmacro{\betaOne}{-0.4}
+    \pgfmathsetmacro{\betaB}{-0.9}
+    
+    % Person 1: mu_X = 2
+    \pgfmathsetmacro{\muXone}{2}
+    \pgfmathsetmacro{\intOne}{\gammaZero + \gammaOne*\muXone}
+    \addplot[red, thick] {1 / (1 + exp(-(\intOne + \betaOne*x)))};
+    \addplot[only marks, mark=*, red] coordinates {
+        (1.5, {1 / (1 + exp(-(\intOne + \betaOne*1.5)))})
+        (2.5, {1 / (1 + exp(-(\intOne + \betaOne*2.5)))})
+    };
+    \addplot[only marks, mark=diamond*, mark size=4pt, red] coordinates {
+        (2, {1 / (1 + exp(-(\intOne + \betaOne*2)))})
+    };
+    \addplot[densely dotted, thin, red] coordinates {
+        (\muXone, -0.1)
+        (\muXone, {1 / (1 + exp(-(\intOne + \betaOne*\muXone)))})
+    };
+    
+    
+    % Person 2: mu_X = 4
+    \pgfmathsetmacro{\muXtwo}{4}
+    \pgfmathsetmacro{\intTwo}{\gammaZero + \gammaOne*\muXtwo}
+    \addplot[orange, thick] {1 / (1 + exp(-(\intTwo + \betaOne*x)))};
+    \addplot[only marks, mark=*, orange] coordinates {
+        (3.5, {1 / (1 + exp(-(\intTwo + \betaOne*3.5)))})
+        (4.5, {1 / (1 + exp(-(\intTwo + \betaOne*4.5)))})
+    };
+    \addplot[only marks, mark=diamond*, mark size=4pt, orange] coordinates {
+        (4, {1 / (1 + exp(-(\intTwo + \betaOne*4)))})
+    };
+    \addplot[densely dotted, thin, orange] coordinates {
+    (\muXtwo, -0.1)
+    (\muXtwo, {1 / (1 + exp(-(\intTwo + \betaOne*\muXtwo)))})
+    };
+    
+    % Between-person curve
+    \addplot[black, thick] {1 / (1 + exp(-(\gammaZero + \betaB*x)))};
+
+    % === Labels ===
+    \node[red] at (axis cs:5.7,0.5) {$\mu_{X,i}=2$};
+    \node[orange] at (axis cs:5.7,0.3) {$\mu_{X,i}=4$};
+    \node[black] at (axis cs:1,1.05) {$\beta_\text{b} = -0.9$};
+    
+    
+    \end{axis}
+\end{tikzpicture}
+
+    \label{fig:withinbetween-contxbiny}
+    \begin{figurenote}
+        The solid black slope represents the between-person effect and the colored slopes the within-cluster effects. The X-axis simultaneously represents $X_{it}$ for the within-slope and $\mu_{X,i}$ for the between-slope; and the Y-axis represents $Y_{it}$ for the within slope and $Y_i$ for the between-slope. Dots reflect possible datapoints and diamonds reflect the position of $\mu_{X,i}$ on the within-person slope.
+    \end{figurenote}
+\end{center}

@@ -1,0 +1,185 @@
+General notes
+\begin{itemize}
+    \item Constantly think about that you are not writing this for people from all disciplines, but specifically for a psychological audience! This audience has a specific frame-of-reference and background knowledge (e.g., SEM, MLM).
+    \item Make sure that each section only contains what it should: do not provide discussion of results in results, but save for discussion; do not provide background information in the results, etc. In line with this, changing the research report, use level 2/3 headers after the introduction to introduce background information (e.g., assumptions and criterions).
+    \item At the end: check references and rules citation/formatting style (e.g., headers, figure captions, figure notes).
+    \item make sure that figures/tables use color coding and aspects only when contributing to the explanation. 
+\end{itemize}
+
+Note that GEE is a very general approach framework (see \textcite{zeger_models_1988}), but that we employ the word according to its common use case, where we assume and impose a certain working correlation structure.
+
+it is the within effect, which is commonly of interest and relevant for causal interpretation.
+
+"In the presence of contextual effects, \textcite{Ludtke2008} shows that the observed mean centering method yields biased results, while the latent mean centering method is unbiased" \parencite{asparouhov_latent_2019}
+
+"Intensive longitudinal categorical outcomes present the same
+analytic issues that occur for their equivalent continuous outcomes.
+For example, if the goal is to investigate causal processes at the
+within-subject level, it is important to distinguish between-subjects
+from within-subjects variation in putative causal X’s; likewise, it is
+important to take account of time T as a potential third variable.
+Categorical outcomes, however, also present unique problems. As
+we will see, they require the use of nonlinear models where the
+outcome is not modeled directly, but rather indirectly, through its
+probability." \parencite[]{bolger_modeling_2013}
+
+"for binary outcomes, the partition of variance between different levels does not have the intuitive interpretation of the linear model" \parencite{merlo_brief_2006}. 
+
+\section{empirical example}
+
+\subsubsection{\textbf{1. Interpersonal Conflict and Negative Affect}}
+
+\begin{itemize}
+    \item \textbf{Predictor}: Interpersonal conflict
+    \begin{itemize}
+        \item \textit{Dichotomous}: Conflict occurred that day (yes/no)
+        \item \textit{Continuous}: Intensity of conflict (e.g., self-rated, 0–10 scale)
+    \end{itemize}
+    \item \textbf{Outcome}: Negative affect
+    \begin{itemize}
+        \item \textit{Dichotomous}: Clinically meaningful distress present (e.g., ≥ threshold item on emotion checklist)
+        \item \textit{Continuous}: Composite score of negative affect (e.g., PANAS-NA)
+    \end{itemize}
+    \item \textbf{Plausibility}:
+    \begin{itemize}
+        \item \textbf{Within-person}: Daily conflicts predict increased distress the same day (Bolger et al., 1989)
+        \item \textbf{Between-person}: Individuals with frequent conflict show higher trait negative affect (Cichy et al., 2009)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{\textbf{2. Social Rejection and Self-Esteem}}
+
+\begin{itemize}
+    \item \textbf{Predictor}: Experience of rejection
+    \begin{itemize}
+        \item \textit{Dichotomous}: Rejection occurred (e.g., being excluded, criticized)
+        \item \textit{Continuous}: Perceived intensity of rejection
+    \end{itemize}
+    \item \textbf{Outcome}: Self-esteem
+    \begin{itemize}
+        \item \textit{Dichotomous}: Low self-esteem moment present (e.g., based on dichotomous item)
+        \item \textit{Continuous}: State self-esteem score
+    \end{itemize}
+    \item \textbf{Plausibility}:
+    \begin{itemize}
+        \item \textbf{Within-person}: Momentary rejection reduces state self-esteem (Leary et al., 1995)
+        \item \textbf{Between-person}: More rejection experiences → lower global self-esteem (Ayduk et al., 2001)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{\textbf{3. Prosocial Behavior and Positive Affect}}
+
+\begin{itemize}
+    \item \textbf{Predictor}: Engaged in a prosocial act
+    \begin{itemize}
+        \item \textit{Dichotomous}: Yes/no (e.g., helped someone, gave a compliment)
+        \item \textit{Continuous}: Time or effort spent helping
+    \end{itemize}
+    \item \textbf{Outcome}: Positive affect
+    \begin{itemize}
+        \item \textit{Dichotomous}: High-mood episode occurred (e.g., endorsement of strong positive emotion)
+        \item \textit{Continuous}: Positive affect rating
+    \end{itemize}
+    \item \textbf{Plausibility}:
+    \begin{itemize}
+        \item \textbf{Within-person}: Helping behavior boosts mood (Layous et al., 2012)
+        \item \textbf{Between-person}: More prosocial individuals report greater well-being (Aknin et al., 2013)
+    \end{itemize}
+\end{itemize}
+
+\subsubsection{ 4. Intimacy and Conflict}
+
+Chapter 5:
+
+"The example dataset in this chapter is, as in the previous one, simulated
+to correspond to datasets from actual intensive longitudinal
+studies with which we have been involved (Bolger, DeLongis, Kessler,
+& Schilling, 1989; Bolger, DeLongis, Kessler, & Wethington,
+1989, 1990; Bolger, Stadler, Paprocki, & DeLongis, 2009; Kennedy,
+Bolger, & Shrout, 2002). We simulated a dataset to represent 28 consecutive
+daily reports of daily relationship conflicts and daily relational
+intimacy from 66 women in a cohabiting, intimate relationship. \ldots 
+As in the previous dataset, we simulated scores
+on the Reis and Shaver Intimacy Scale (intimacy) to lie on a 0 to 10
+interval, such that 0 was the lowest possible score and 10 was the
+highest possible score. The variable conflict was simulated such that 0
+represented no conflict today, and 1 represented having at least one
+conflict today. Finally, we simulated responses to a single-item, cross-sectional
+measure of how globally satisfied respondents felt about their intimate
+relationship. We simulated responses as follows (with n’s in
+parentheses): 5 = best I could ever imagine a relationship being
+(n = 10), 4 = extremely satisfied (n = 18), 3 moderately satisfied
+(n = 12), 2 = a bit dissatisfied (n = 19), 1 = very dissatisfied (n = 7).
+Note that for ease of exposition, relationship quality (relqual) is
+treated as a dichotomy of low- and high-quality relationships. A
+dichotomous (0, 1) version used in the analyses was created by
+combining codes 3, 4, and 5 into a high-relationship quality group
+(n = 40, 61%) and codes 1 and 2 into a low-relationship quality
+group (n = 26, 39%)" \parencite[]{bolger_intensive_2013}
+
+Chapter 6:
+
+"The dataset is from a daily diary study of couples during what was
+for them a typical 4-week period. Each day both partners in each
+couple provided reports in the morning, within an hour of rising,
+and in the evening, within an hour of going to bed. In the morning,
+each partner reported his or her momentary (i.e., “right now”) emotional
+states as well as sleep quality and duration. In the evening,
+each partner again reported on momentary states and on events that
+had occurred during the day. Analyses based on this dataset have
+already appeared in several publications (see Gleason, Iida, Bolger,
+& Shrout, 2003; Gleason, Iida, Shrout, & Bolger, 2008; Kennedy et
+al., 2002). The current analyses are based on a subset of 61 heterosexual
+couples from the original dataset.
+Here we examine evening reports of conflict from the point of
+view of the male partners to see if the anger/irritability of the female
+partner at the beginning of a given day increased the risk of such
+conflicts later in the day. As is always the case with intensive longitudinal
+data, we allow for between-subjects differences (i.e., random
+effects), which in this case are between-couples differences, in the
+occurrence of conflict and in the anger–conflict relationship"
+
+\subsubsection{\subsubsection{5. Mindfulness and sleep quality}}
+
+\paragraph{\textbf{Predictor: Mindfulness}}
+
+\begin{itemize}
+    \item \textbf{Dichotomous (event-based):} Practiced mindfulness today (yes/no)
+E.g., engaged in formal mindfulness (meditation, mindful breathing), or reported being mindful (≥ threshold on a dichotomous item)
+
+    \item \textbf{Continuous:} Momentary or daily mindfulness level
+E.g., state mindfulness scale (Brown \& Ryan, 2003), such as the Toronto Mindfulness Scale or MAAS daily version
+
+\end{itemize}
+
+\paragraph{\textbf{Outcome: Sleep Quality}}
+
+\begin{itemize}
+    \item \textbf{Dichotomous:} Had poor sleep (yes/no)
+Based on sleep diary item or threshold on subjective sleep quality (e.g., “slept poorly” vs. not)
+
+    \item \textbf{Continuous:} Subjective sleep quality rating (0–10), sleep onset latency, or sleep efficiency from actigraphy
+\end{itemize}
+
+\subsubsection{\textbf{6. Mindfulness and Rumination}}
+
+\begin{itemize}
+    \item \textbf{Predictor}: Mindfulness
+    \item \textbf{Outcome}: Rumination (or related cognitive interference)
+\end{itemize}
+
+\textbf{Within-person}:
+
+When you are more mindful than usual, you ruminate less.
+
+\paragraph{\textbf{Between-person}:}
+
+Individuals who regularly practice mindfulness might have a history of \textbf{higher baseline rumination} (e.g., using mindfulness to cope with it), so their \textbf{mean level of rumination is higher}, despite within-person benefits.
+
+→ \textbf{Result}: Negative within-person, positive between-person → negative contextual effect
+
+\begin{itemize}
+    \item \textbf{Theoretical basis}: Selection effect—those prone to rumination seek out and report more mindfulness use.
+    \item \textbf{Empirical support}: Cross-sectional studies show mixed associations depending on whether mindfulness is dispositional or practice-based (Barnhofer et al., 2011).
+\end{itemize}
+ 

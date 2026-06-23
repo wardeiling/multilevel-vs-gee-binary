@@ -1,0 +1,45 @@
+% \begin{center}
+%     \captionof{figure}{Bias for DGM 4 in Within-Person and Contextual Effect for Different Estimation Approaches}
+%     \begin{subfigure}{1.1\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth, keepaspectratio]{Figures/pred_binary_out_binary_bias_plot_T_total-vs-sd.u0_within.pdf}
+%         \caption{Within-Person Effect}\label{fig:dgm4-within}
+%     \end{subfigure}
+%     % \hfill
+%     \begin{subfigure}{1.1\linewidth}
+%         \centering
+%         \includegraphics[width=\linewidth, keepaspectratio]{Figures/pred_binary_out_binary_bias_plot_T_total-vs-sd.u0_contextual.pdf}
+%         \caption{Contextual Effect for Mundlak's Contextual Model}\label{fig:dgm4-contextual}
+%     \end{subfigure}
+%     \label{fig:dgm4}
+%     \begin{figurenote}
+%         UC = uncentered predictor, CWC = centered within clusters predictor, MuCo = Mundlak's contextual model.
+%     \end{figurenote}
+% \end{center}
+
+
+\begin{center}
+    \captionof{figure}{Bias for DGM 4 in Within-Person and Contextual Effect for Different Estimation Approaches}
+     \hspace*{-1.5cm}
+    \begin{subfigure}{0.80\linewidth}  % Set width proportionally for the first figure
+        \centering
+        \includegraphics[height=10.6cm, keepaspectratio]{Figures/pred_binary_out_binary_bias_plot_T_total-vs-sd.u0_within.pdf}
+        \caption{Within-Person Effect $\beta_1$}\label{fig:dgm4-within}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.25\linewidth}  % Set width proportionally for the second figure
+        \centering
+        \includegraphics[height=10.6cm, keepaspectratio]{Figures/pred_binary_out_binary_bias_plot_T_total-vs-sd.u0_contextual.pdf}
+        \caption{Contextual Effect $\gamma_{01}$ (Method MuCo)}\label{fig:dgm4-contextual}
+    \end{subfigure}
+    \label{fig:dgm4}
+    \begin{flushleft}
+        \begin{figurenote}
+        The boxplot shows bias based on 1000 replications for data-generating model 4, which includes a binary predictor and outcome. The boxes represent the interquartile range (IQR) from the 25th to 75th percentiles, with the median indicated by the horizontal line inside. Whiskers extend to 1.5 times the IQR, and replications outside this range are plotted as dots. UC = uncentered, CWC = centered within clusters, MuCo = Mundlak contextual, GLMM = generalized linear mixed model, GEE = generalized estimating equations. $T$ represents the total number of time points, and $\sigma_u$ denotes the random intercept residual variance.
+
+        
+        % The boxplot shows bias based on 1000 replications for data-generating model 4, which includes a binary predictor and outcome. The boxes represent the interquartile range from the 25th to 75th percentiles, with the median indicated by the horizontal line inside. Whiskers extend to 1.5 times the IQR, and points outside this range are considered outliers, plotted as dots. UC refers to uncentered, CWC to centered within clusters, and MuCo to Mundlak contextual. $T$ represents the total number of time points, and $\sigma_u$ denotes the random intercept residual variance.
+        % UC = Uncentered, CWC = centered within clusters, MuCo = Mundlak Contextual. 
+    \end{figurenote}
+    \end{flushleft}
+\end{center}
